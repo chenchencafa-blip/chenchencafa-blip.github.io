@@ -131,7 +131,8 @@
                 <!-- Project 1 (KEETA) -->
                 <div class="fade-in w-full" style="transition-delay: 0ms;">
                     <div onclick="openProjectLightbox('https://ccchen.online/PicGo/keeta%401x.webp')" class="group flex flex-col md:flex-row w-full border-b border-neutral-200 last:border-b-0 bg-[#fafafa] cursor-pointer">
-                        <div class="w-full md:w-[55%] lg:w-[60%] aspect-[4/3] md:aspect-[11/10] lg:aspect-[5/4] xl:aspect-[4/3] shrink-0 relative overflow-hidden border-b md:border-b-0 md:border-r border-neutral-200">
+                        <!-- 修复1：添加 h-[75vw] md:h-auto，防止低版本手机浏览器不支持 aspect-ratio 导致的图片高度塌陷（消失）问题 -->
+                        <div class="w-full h-[75vw] md:h-auto md:w-[55%] lg:w-[60%] aspect-[4/3] md:aspect-[11/10] lg:aspect-[5/4] xl:aspect-[4/3] shrink-0 relative overflow-hidden border-b md:border-b-0 md:border-r border-neutral-200">
                             <!-- 注入 ?v=2 强制刷新缓存 -->
                             <img src="https://ccchen.online/PicGo/keeta-face.webp?v=2" alt="Project Preview" class="absolute inset-0 w-full h-full object-cover grayscale transition-all duration-700 ease-in-out group-hover:grayscale-0 group-hover:scale-105" loading="lazy" />
                         </div>
@@ -160,7 +161,8 @@
                 <!-- Project 2 (MEITUAN Reverse) -->
                 <div class="fade-in w-full" style="transition-delay: 0ms;">
                     <div onclick="openProjectLightbox('https://ccchen.online/PicGo/meituan%401x.webp')" class="group flex flex-col md:flex-row w-full border-b border-neutral-200 last:border-b-0 bg-[#fafafa] cursor-pointer">
-                        <div class="w-full md:w-[55%] lg:w-[60%] aspect-[4/3] md:aspect-[11/10] lg:aspect-[5/4] xl:aspect-[4/3] shrink-0 relative overflow-hidden border-b md:border-b-0 md:border-l border-neutral-200">
+                        <!-- 修复1：添加 h-[75vw] md:h-auto，防止低版本手机浏览器不支持 aspect-ratio 导致的图片高度塌陷（消失）问题 -->
+                        <div class="w-full h-[75vw] md:h-auto md:w-[55%] lg:w-[60%] aspect-[4/3] md:aspect-[11/10] lg:aspect-[5/4] xl:aspect-[4/3] shrink-0 relative overflow-hidden border-b md:border-b-0 md:border-l border-neutral-200">
                             <!-- 注入 ?v=2 强制刷新缓存 -->
                             <img src="https://ccchen.online/PicGo/meituan-face%202.webp?v=2" alt="Project Preview" class="absolute inset-0 w-full h-full object-cover grayscale transition-all duration-700 ease-in-out group-hover:grayscale-0 group-hover:scale-105" loading="lazy" />
                         </div>
@@ -191,7 +193,8 @@
                 <div class="fade-in w-full" style="transition-delay: 0ms;">
                     <!-- 注入 ?v=2 强制刷新 Lightbox 大图缓存 -->
                     <div onclick="openProjectLightbox('https://ccchen.online/PicGo/mafengwo%401x.webp?v=2')" class="group flex flex-col md:flex-row w-full border-b border-neutral-200 last:border-b-0 bg-[#fafafa] cursor-pointer">
-                        <div class="w-full md:w-[55%] lg:w-[60%] aspect-[4/3] md:aspect-[11/10] lg:aspect-[5/4] xl:aspect-[4/3] shrink-0 relative overflow-hidden border-b md:border-b-0 md:border-r border-neutral-200">
+                        <!-- 修复1：添加 h-[75vw] md:h-auto，防止低版本手机浏览器不支持 aspect-ratio 导致的图片高度塌陷（消失）问题 -->
+                        <div class="w-full h-[75vw] md:h-auto md:w-[55%] lg:w-[60%] aspect-[4/3] md:aspect-[11/10] lg:aspect-[5/4] xl:aspect-[4/3] shrink-0 relative overflow-hidden border-b md:border-b-0 md:border-r border-neutral-200">
                             <!-- 注入 ?v=2 强制刷新缓存 -->
                             <img src="https://ccchen.online/PicGo/mafengwo-face.webp?v=2" alt="Project Preview" class="absolute inset-0 w-full h-full object-cover grayscale transition-all duration-700 ease-in-out group-hover:grayscale-0 group-hover:scale-105" loading="lazy" />
                         </div>
@@ -304,8 +307,8 @@
             <div class="fade-in" style="transition-delay: 0ms;">
                 <div class="relative flex items-center w-full mb-4 md:mb-6">
                     <p class="text-[#C0FF04] text-xs md:text-sm tracking-widest uppercase m-0">Let's work together.</p>
-                    <!-- 修复1：引入 fixed md:absolute 混合定位。手机端依然居中，电脑端则转为绝对定位完美对齐 Let's work together. -->
-                    <div id="email-toast" class="fixed md:absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-neutral-900 px-6 py-3 md:px-8 md:py-4 rounded-full font-normal text-[13px] md:text-sm transition-all duration-500 z-[9999] flex items-center gap-2.5 md:gap-3 shadow-[0_10px_40px_rgba(0,0,0,0.2)] opacity-0 scale-90 pointer-events-none whitespace-nowrap">
+                    <!-- 修复2：去除手机端的 fixed 定位，统一使用 absolute，确保 Toast 在任何设备上都与 Let's work together 纵向居中对齐 -->
+                    <div id="email-toast" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-neutral-900 px-6 py-3 md:px-8 md:py-4 rounded-full font-normal text-[13px] md:text-sm transition-all duration-500 z-[9999] flex items-center gap-2.5 md:gap-3 shadow-[0_10px_40px_rgba(0,0,0,0.2)] opacity-0 scale-90 pointer-events-none whitespace-nowrap">
                         <div class="w-4 h-4 md:w-5 md:h-5 rounded-full bg-[#C0FF04] flex items-center justify-center text-neutral-900">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="w-2.5 h-2.5 md:w-3 md:h-3"><path d="M20 6 9 17l-5-5"/></svg>
                         </div> 
