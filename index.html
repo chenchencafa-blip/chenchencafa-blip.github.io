@@ -360,9 +360,10 @@
         </button>
         <!-- 修复2：移动端强制无安全内边距 px-0 py-0 使图片完全全屏 -->
         <div class="w-full h-full overflow-y-auto no-scrollbar px-0 py-0 md:px-20 md:py-20">
-            <div class="w-full mx-auto min-h-full flex flex-col justify-start" onclick="event.stopPropagation()">
-                <!-- 修复2：移动端去除图片圆角 rounded-none 保证贴边 -->
-                <img id="pl-image" src="" alt="Project Detail" class="w-full h-auto shadow-2xl rounded-none md:rounded-md pointer-events-none transition-transform duration-500 ease-out" />
+            <!-- 核心修复：去除原有的 justify-start，释放容器排列限制 -->
+            <div class="w-full mx-auto min-h-full flex flex-col" onclick="event.stopPropagation()">
+                <!-- 核心修复：添加 my-auto。当图片不足一屏时会自动垂直居中，超过一屏时则自动贴顶顺滑滚动 -->
+                <img id="pl-image" src="" alt="Project Detail" class="my-auto w-full h-auto shadow-2xl rounded-none md:rounded-md pointer-events-none transition-transform duration-500 ease-out" />
             </div>
         </div>
     </div>
