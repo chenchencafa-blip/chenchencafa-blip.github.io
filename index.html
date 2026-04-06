@@ -8,10 +8,10 @@
     <!-- 1. 突破防盗链策略 -->
     <meta name="referrer" content="no-referrer">
     
-    <!-- 2. 补齐环境字体：引入 Inter 字体以 100% 还原排版气质 -->
+    <!-- 2. 补齐环境字体：引入 Inter 字体以 100% 还原排版气质 (按需加载 300/400/600) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <!-- 3. 引入 Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -74,36 +74,36 @@
         <div id="cursor-inner" class="w-full h-full rounded-full bg-[#C0FF04]/60 backdrop-blur-[2px] shadow-[0_0_10px_rgba(192,255,4,0.3)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] scale-100"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 px-6 md:px-12 flex justify-between items-center transition-all duration-500 py-8 bg-transparent">
-        <div class="text-xl font-medium tracking-tight cursor-pointer transition-all duration-300" onclick="scrollToSection('about')" id="nav-logo">
+    <!-- Navigation (新增默认黑粗边框) -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 px-6 md:px-12 flex justify-between items-center transition-all duration-500 py-8 bg-transparent border-b-[1.5px] border-[#000]">
+        <div class="text-xl font-semibold tracking-tight cursor-pointer transition-all duration-300" onclick="scrollToSection('about')" id="nav-logo">
             Portfolio.
         </div>
         <ul class="hidden md:flex space-x-8 text-sm uppercase tracking-widest" id="nav-links">
             <li><button onclick="scrollToSection('about')" data-section="about" class="nav-btn transition-opacity duration-300 hover:opacity-100 opacity-100 font-normal">about</button></li>
-            <li><button onclick="scrollToSection('ux-design')" data-section="ux-design" class="nav-btn transition-opacity duration-300 hover:opacity-100 opacity-50 font-thin">ux design</button></li>
-            <li><button onclick="scrollToSection('illustration')" data-section="illustration" class="nav-btn transition-opacity duration-300 hover:opacity-100 opacity-50 font-thin">illustration</button></li>
-            <li><button onclick="scrollToSection('photography')" data-section="photography" class="nav-btn transition-opacity duration-300 hover:opacity-100 opacity-50 font-thin">photography</button></li>
-            <li><button onclick="scrollToSection('contact')" data-section="contact" class="nav-btn transition-opacity duration-300 hover:opacity-100 opacity-50 font-thin">contact</button></li>
+            <li><button onclick="scrollToSection('ux-design')" data-section="ux-design" class="nav-btn transition-opacity duration-300 hover:opacity-100 opacity-50 font-light">ux design</button></li>
+            <li><button onclick="scrollToSection('illustration')" data-section="illustration" class="nav-btn transition-opacity duration-300 hover:opacity-100 opacity-50 font-light">illustration</button></li>
+            <li><button onclick="scrollToSection('photography')" data-section="photography" class="nav-btn transition-opacity duration-300 hover:opacity-100 opacity-50 font-light">photography</button></li>
+            <li><button onclick="scrollToSection('contact')" data-section="contact" class="nav-btn transition-opacity duration-300 hover:opacity-100 opacity-50 font-light">contact</button></li>
         </ul>
     </nav>
 
     <div class="w-full">
-        <!-- 1. Introduction (About) -->
-        <section id="about" class="px-6 md:px-12 max-w-screen-2xl mx-auto pt-28 md:pt-36 lg:pt-40 pb-10 md:pb-16">
+        <!-- 1. Introduction (About) - 增加 pt 数值以扩充顶部留白呼吸感，同时增加 pb 扩展底部间距保持模块一致性 -->
+        <section id="about" class="px-6 md:px-12 max-w-screen-2xl mx-auto pt-36 md:pt-48 lg:pt-56 pb-20 md:pb-28 lg:pb-32">
             <div class="w-full">
                 <div class="fade-in" style="transition-delay: 100ms;">
                     <h1 class="text-5xl md:text-7xl lg:text-8xl font-light tracking-tighter leading-[1.1] mb-8 text-neutral-900">
                         Hello, I'm <br />
-                        <span class="inline-flex items-center gap-4 lg:gap-6 mt-2">
-                            <span class="font-normal">CHEN CHEN</span>
+                        <span class="inline-flex items-center gap-6 md:gap-8 lg:gap-10 mt-2">
+                            <span class="font-semibold">CHEN CHEN</span>
                             <img src="https://ccchen.online/PicGo/cc-1.png" alt="Chen Chen Avatar" class="w-14 h-14 md:w-20 md:h-20 lg:w-28 lg:h-28 rounded-full object-cover" />
                         </span>
                     </h1>
                 </div>
                 
                 <div class="fade-in" style="transition-delay: 300ms;">
-                    <div class="mt-10 md:mt-12 text-[13px] md:text-[15px] text-neutral-600 leading-[1.8] md:leading-[1.9] tracking-wide font-thin">
+                    <div class="mt-10 md:mt-12 text-[13px] md:text-[15px] text-neutral-600 leading-[1.8] md:leading-[1.9] tracking-wide font-light">
                         <p class="mb-5 md:mb-6">
                             A <span class="bg-[#C0FF04] text-neutral-900 font-normal px-1">UX designer</span> with 12 years of experience. I studied at the <span class="bg-[#C0FF04] text-neutral-900 font-normal px-1">Picture Book</span> Studio, Department of Art & Design, <span class="bg-[#C0FF04] text-neutral-900 font-normal px-1">Central Academy of Fine Arts</span>, and have worked at LightInTheBox and Mafengwo. I’m currently a <span class="bg-[#C0FF04] text-neutral-900 font-normal px-1">design manager at Meituan</span>, with five years of experience leading teams.
                         </p>
@@ -120,17 +120,17 @@
             <div class="px-6 md:px-12 max-w-screen-2xl mx-auto mb-12">
                 <div class="fade-in w-full">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-8 w-full">
-                        <h2 class="text-4xl md:text-5xl font-light tracking-tight shrink-0">UX Design</h2>
-                        <p class="text-lg text-neutral-500 font-thin md:text-right md:flex-1 md:whitespace-nowrap">Selected digital product case studies.</p>
+                        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight shrink-0">UX Design</h2>
+                        <p class="text-lg text-neutral-500 font-light md:text-right md:flex-1 md:whitespace-nowrap">Selected digital product case studies.</p>
                     </div>
                 </div>
             </div>
             
             <div class="w-full flex flex-col border-t border-neutral-200">
-                <!-- Project 1 -->
+                <!-- Project 1 (KEETA) -->
                 <div class="fade-in w-full" style="transition-delay: 0ms;">
-                    <div onclick="openProjectLightbox('https://ccchen.online/PicGo/keeta%401x.webp')" class="group flex flex-col md:flex-row w-full border-b border-neutral-200 last:border-b-0 bg-[#fafafa] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[500px] cursor-pointer">
-                        <div class="w-full md:w-[55%] lg:w-[60%] h-[40vh] md:h-auto relative overflow-hidden border-b md:border-b-0 md:border-r border-neutral-200">
+                    <div onclick="openProjectLightbox('https://ccchen.online/PicGo/keeta%401x.webp')" class="group flex flex-col md:flex-row w-full border-b border-neutral-200 last:border-b-0 bg-[#fafafa] cursor-pointer">
+                        <div class="w-full md:w-[55%] lg:w-[60%] aspect-[4/3] md:aspect-[11/10] lg:aspect-[5/4] xl:aspect-[4/3] shrink-0 relative overflow-hidden border-b md:border-b-0 md:border-r border-neutral-200">
                             <img src="https://ccchen.online/PicGo/keeta-face.webp" alt="Project Preview" class="absolute inset-0 w-full h-full object-cover grayscale transition-all duration-700 ease-in-out group-hover:grayscale-0 group-hover:scale-105" loading="lazy" />
                         </div>
                         <div class="w-full md:w-[45%] lg:w-[40%] flex flex-col justify-center p-6 md:p-8 lg:p-12 xl:p-16 ">
@@ -138,16 +138,16 @@
                                 <span class="border border-neutral-900 rounded-full px-3 py-[2px] lg:px-4 lg:py-1 text-neutral-900 font-normal whitespace-nowrap group-hover:bg-neutral-900 group-hover:text-white transition-colors duration-500">2022-2024</span>
                                 <span class="break-words max-w-full">END-TO-END DESIGN | GLOBAL APP</span>
                             </div>
-                            <h3 class="text-2xl md:text-[1.75rem] lg:text-[2rem] xl:text-[2.25rem] font-normal uppercase tracking-tight leading-none mb-3 text-neutral-900 flex flex-col items-start w-full">
+                            <h3 class="text-2xl md:text-[1.75rem] lg:text-[2rem] xl:text-[2.25rem] font-semibold uppercase tracking-tight leading-none mb-3 text-neutral-900 flex flex-col items-start w-full">
                                 <span class="inline-block border-b-2 md:border-b-[3px] border-transparent group-hover:border-neutral-900 pb-0.5 md:pb-1 mb-0.5 max-w-full break-words transition-colors duration-500 ease-in-out">KEETA,</span>
                                 <span class="inline-block border-b-2 md:border-b-[3px] border-transparent group-hover:border-neutral-900 pb-0.5 md:pb-1 mb-0.5 max-w-full break-words transition-colors duration-500 ease-in-out">MEITUAN'S GLOBAL</span>
                                 <span class="inline-block border-b-2 md:border-b-[3px] border-transparent group-hover:border-neutral-900 pb-0.5 md:pb-1 mb-0.5 max-w-full break-words transition-colors duration-500 ease-in-out">FOOD APP</span>
                             </h3>
-                            <div class="text-neutral-600 font-thin leading-relaxed text-xs md:text-[13px] max-w-xl">
+                            <div class="text-neutral-600 font-light leading-relaxed text-xs md:text-[13px] max-w-xl">
                                 <span>Led the team to build Meituan’s <strong class="font-normal text-neutral-900">global food delivery app</strong> from scratch, launching in <strong class="font-normal text-neutral-900">Hong Kong and the Middle East</strong>, and establishing a <strong class="font-normal text-neutral-900">global design system</strong>.</span>
                             </div>
                             <div class="mt-5 lg:mt-6">
-                                <span class="inline-flex items-center gap-1.5 text-[10px] lg:text-[11px] font-normal uppercase tracking-widest border-b border-neutral-900 pb-0.5 group-hover:text-neutral-500 group-hover:border-neutral-500 transition-colors">
+                                <span class="inline-flex items-center gap-1.5 text-[10px] lg:text-[11px] font-normal uppercase tracking-widest border-b border-neutral-900 text-neutral-900 pb-0.5 transition-colors">
                                     View Case Study <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
                                 </span>
                             </div>
@@ -155,10 +155,10 @@
                     </div>
                 </div>
 
-                <!-- Project 2 (Reverse) -->
+                <!-- Project 2 (MEITUAN Reverse) -->
                 <div class="fade-in w-full" style="transition-delay: 0ms;">
-                    <div onclick="openProjectLightbox('https://ccchen.online/PicGo/meituan%401x.webp')" class="group flex flex-col md:flex-row w-full border-b border-neutral-200 last:border-b-0 bg-[#fafafa] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[500px] cursor-pointer">
-                        <div class="w-full md:w-[55%] lg:w-[60%] h-[40vh] md:h-auto relative overflow-hidden border-b md:border-b-0 md:border-l border-neutral-200">
+                    <div onclick="openProjectLightbox('https://ccchen.online/PicGo/meituan%401x.webp')" class="group flex flex-col md:flex-row w-full border-b border-neutral-200 last:border-b-0 bg-[#fafafa] cursor-pointer">
+                        <div class="w-full md:w-[55%] lg:w-[60%] aspect-[4/3] md:aspect-[11/10] lg:aspect-[5/4] xl:aspect-[4/3] shrink-0 relative overflow-hidden border-b md:border-b-0 md:border-l border-neutral-200">
                             <img src="https://ccchen.online/PicGo/meituan-face.webp" alt="Project Preview" class="absolute inset-0 w-full h-full object-cover grayscale transition-all duration-700 ease-in-out group-hover:grayscale-0 group-hover:scale-105" loading="lazy" />
                         </div>
                         <div class="w-full md:w-[45%] lg:w-[40%] flex flex-col justify-center p-6 md:p-8 lg:p-12 xl:p-16 md:-order-1">
@@ -166,17 +166,17 @@
                                 <span class="border border-neutral-900 rounded-full px-3 py-[2px] lg:px-4 lg:py-1 text-neutral-900 font-normal whitespace-nowrap group-hover:bg-neutral-900 group-hover:text-white transition-colors duration-500">2025-2026</span>
                                 <span class="break-words max-w-full">UX DESIGN | AI</span>
                             </div>
-                            <h3 class="text-2xl md:text-[1.75rem] lg:text-[2rem] xl:text-[2.25rem] font-normal uppercase tracking-tight leading-none mb-3 text-neutral-900 flex flex-col items-start w-full">
+                            <h3 class="text-2xl md:text-[1.75rem] lg:text-[2rem] xl:text-[2.25rem] font-semibold uppercase tracking-tight leading-none mb-3 text-neutral-900 flex flex-col items-start w-full">
                                 <span class="inline-block border-b-2 md:border-b-[3px] border-transparent group-hover:border-neutral-900 pb-0.5 md:pb-1 mb-0.5 max-w-full break-words transition-colors duration-500 ease-in-out">MEITUAN</span>
                                 <span class="inline-block border-b-2 md:border-b-[3px] border-transparent group-hover:border-neutral-900 pb-0.5 md:pb-1 mb-0.5 max-w-full break-words transition-colors duration-500 ease-in-out">MERCHANT</span>
                                 <span class="inline-block border-b-2 md:border-b-[3px] border-transparent group-hover:border-neutral-900 pb-0.5 md:pb-1 mb-0.5 max-w-full break-words transition-colors duration-500 ease-in-out">ADVERTISING</span>
                                 <span class="inline-block border-b-2 md:border-b-[3px] border-transparent group-hover:border-neutral-900 pb-0.5 md:pb-1 mb-0.5 max-w-full break-words transition-colors duration-500 ease-in-out">SYSTEMS</span>
                             </h3>
-                            <div class="text-neutral-600 font-thin leading-relaxed text-xs md:text-[13px] max-w-xl">
+                            <div class="text-neutral-600 font-light leading-relaxed text-xs md:text-[13px] max-w-xl">
                                 <span>Led the redesign of Meituan’s commercial growth platform, including <strong class="font-normal text-neutral-900">UX audits, journey and funnel mapping, ideation, and final delivery</strong>—partly built with <strong class="font-normal text-neutral-900">AI-assisted coding</strong>.</span>
                             </div>
                             <div class="mt-5 lg:mt-6">
-                                <span class="inline-flex items-center gap-1.5 text-[10px] lg:text-[11px] font-normal uppercase tracking-widest border-b border-neutral-900 pb-0.5 group-hover:text-neutral-500 group-hover:border-neutral-500 transition-colors">
+                                <span class="inline-flex items-center gap-1.5 text-[10px] lg:text-[11px] font-normal uppercase tracking-widest border-b border-neutral-900 text-neutral-900 pb-0.5 transition-colors">
                                     View Case Study <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
                                 </span>
                             </div>
@@ -184,10 +184,10 @@
                     </div>
                 </div>
 
-                <!-- Project 3 -->
+                <!-- Project 3 (MAFENGWO) -->
                 <div class="fade-in w-full" style="transition-delay: 0ms;">
-                    <div onclick="openProjectLightbox('https://ccchen.online/PicGo/mafengwo%401x.webp')" class="group flex flex-col md:flex-row w-full border-b border-neutral-200 last:border-b-0 bg-[#fafafa] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[500px] cursor-pointer">
-                        <div class="w-full md:w-[55%] lg:w-[60%] h-[40vh] md:h-auto relative overflow-hidden border-b md:border-b-0 md:border-r border-neutral-200">
+                    <div onclick="openProjectLightbox('https://ccchen.online/PicGo/mafengwo%401x.webp')" class="group flex flex-col md:flex-row w-full border-b border-neutral-200 last:border-b-0 bg-[#fafafa] cursor-pointer">
+                        <div class="w-full md:w-[55%] lg:w-[60%] aspect-[4/3] md:aspect-[11/10] lg:aspect-[5/4] xl:aspect-[4/3] shrink-0 relative overflow-hidden border-b md:border-b-0 md:border-r border-neutral-200">
                             <img src="https://ccchen.online/PicGo/mafengwo-face.webp" alt="Project Preview" class="absolute inset-0 w-full h-full object-cover grayscale transition-all duration-700 ease-in-out group-hover:grayscale-0 group-hover:scale-105" loading="lazy" />
                         </div>
                         <div class="w-full md:w-[45%] lg:w-[40%] flex flex-col justify-center p-6 md:p-8 lg:p-12 xl:p-16 ">
@@ -195,16 +195,16 @@
                                 <span class="border border-neutral-900 rounded-full px-3 py-[2px] lg:px-4 lg:py-1 text-neutral-900 font-normal whitespace-nowrap group-hover:bg-neutral-900 group-hover:text-white transition-colors duration-500">2016-2017</span>
                                 <span class="break-words max-w-full">VECTOR ILLUSTRATION | UI DESIGN | CARTOON IP</span>
                             </div>
-                            <h3 class="text-2xl md:text-[1.75rem] lg:text-[2rem] xl:text-[2.25rem] font-normal uppercase tracking-tight leading-none mb-3 text-neutral-900 flex flex-col items-start w-full">
+                            <h3 class="text-2xl md:text-[1.75rem] lg:text-[2rem] xl:text-[2.25rem] font-semibold uppercase tracking-tight leading-none mb-3 text-neutral-900 flex flex-col items-start w-full">
                                 <span class="inline-block border-b-2 md:border-b-[3px] border-transparent group-hover:border-neutral-900 pb-0.5 md:pb-1 mb-0.5 max-w-full break-words transition-colors duration-500 ease-in-out">MAFENGWO</span>
                                 <span class="inline-block border-b-2 md:border-b-[3px] border-transparent group-hover:border-neutral-900 pb-0.5 md:pb-1 mb-0.5 max-w-full break-words transition-colors duration-500 ease-in-out">TRAVEL</span>
                                 <span class="inline-block border-b-2 md:border-b-[3px] border-transparent group-hover:border-neutral-900 pb-0.5 md:pb-1 mb-0.5 max-w-full break-words transition-colors duration-500 ease-in-out">CHECK-IN</span>
                             </h3>
-                            <div class="text-neutral-600 font-thin leading-relaxed text-xs md:text-[13px] max-w-xl">
+                            <div class="text-neutral-600 font-light leading-relaxed text-xs md:text-[13px] max-w-xl">
                                 <span>Created <strong class="font-normal text-neutral-900">illustrations and UI</strong> for the check-in feature, enhancing the <strong class="font-normal text-neutral-900">sense of delight</strong> and encouraging users’ <strong class="font-normal text-neutral-900">motivation to collect</strong>.</span>
                             </div>
                             <div class="mt-5 lg:mt-6">
-                                <span class="inline-flex items-center gap-1.5 text-[10px] lg:text-[11px] font-normal uppercase tracking-widest border-b border-neutral-900 pb-0.5 group-hover:text-neutral-500 group-hover:border-neutral-500 transition-colors">
+                                <span class="inline-flex items-center gap-1.5 text-[10px] lg:text-[11px] font-normal uppercase tracking-widest border-b border-neutral-900 text-neutral-900 pb-0.5 transition-colors">
                                     View Case Study <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
                                 </span>
                             </div>
@@ -218,8 +218,8 @@
         <section id="illustration" class="px-6 md:px-12 max-w-screen-2xl mx-auto pt-24 md:pt-32 pb-10 md:pb-16 border-t border-neutral-200">
             <div class="fade-in w-full">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-8 w-full">
-                    <h2 class="text-4xl md:text-5xl font-light tracking-tight shrink-0">Illustration</h2>
-                    <p class="text-lg text-neutral-500 font-thin md:text-right md:flex-1 md:whitespace-nowrap">Visual storytelling and artistic explorations.</p>
+                    <h2 class="text-4xl md:text-5xl font-semibold tracking-tight shrink-0">Illustration</h2>
+                    <p class="text-lg text-neutral-500 font-light md:text-right md:flex-1 md:whitespace-nowrap">Visual storytelling and artistic explorations.</p>
                 </div>
             </div>
             
@@ -234,8 +234,8 @@
                         </div>
                         <div class="w-full md:w-1/2 flex justify-center md:justify-start">
                             <div class="max-w-sm lg:max-w-md w-full">
-                                <h3 class="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-neutral-900 mb-5 lg:mb-6">My Wedding</h3>
-                                <div class="text-neutral-600 font-thin leading-[1.8] text-[14px] md:text-[15px]">
+                                <h3 class="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-neutral-900 mb-5 lg:mb-6">My Wedding</h3>
+                                <div class="text-neutral-600 font-light leading-[1.8] text-[14px] md:text-[15px]">
                                     <span>An illustrated welcome sign for my wedding, featuring <strong class="font-normal text-neutral-900">sunflowers</strong> I love and our <strong class="font-normal text-neutral-900">two cats</strong>. We are depicted in our <strong class="font-normal text-neutral-900">wedding attire</strong>, capturing a gentle early summer day I still hold in memory.</span>
                                 </div>
                             </div>
@@ -249,8 +249,8 @@
                         <div class="flex flex-col md:flex-row items-start md:items-center relative gap-6 md:gap-8 lg:gap-10">
                             <div class="w-full md:w-[40%] lg:w-[35%] shrink-0 mb-8 md:mb-0 z-0">
                                 <div class="max-w-xs lg:max-w-sm">
-                                    <h3 class="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-neutral-900 mb-5 lg:mb-6">An Autumn Journey</h3>
-                                    <div class="text-neutral-600 font-thin leading-[1.8] text-[14px] md:text-[15px]">
+                                    <h3 class="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-neutral-900 mb-5 lg:mb-6">An Autumn Journey</h3>
+                                    <div class="text-neutral-600 font-light leading-[1.8] text-[14px] md:text-[15px]">
                                         <span>A Mid-Autumn <strong class="font-normal text-neutral-900">road trip</strong> with friends to the <strong class="font-normal text-neutral-900">Red Beach</strong>, where we visited the <strong class="font-normal text-neutral-900">solitary seaside library</strong> and witnessed the moon rising over the ocean.</span>
                                     </div>
                                 </div>
@@ -271,8 +271,8 @@
             <div class="px-6 md:px-12 max-w-screen-2xl mx-auto mb-6 md:mb-10">
                 <div class="fade-in w-full">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-8 w-full">
-                        <h2 class="text-4xl md:text-5xl font-light tracking-tight shrink-0">Photography</h2>
-                        <p class="text-lg text-neutral-500 font-thin md:text-right md:flex-1 md:whitespace-nowrap">Journeys captured in light and quiet memory.</p>
+                        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight shrink-0">Photography</h2>
+                        <p class="text-lg text-neutral-500 font-light md:text-right md:flex-1 md:whitespace-nowrap">Journeys captured in light and quiet memory.</p>
                     </div>
                 </div>
             </div>
@@ -297,8 +297,11 @@
             <div class="fade-in" style="transition-delay: 0ms;">
                 <div class="relative flex items-center w-full mb-4 md:mb-6">
                     <p class="text-[#C0FF04] text-xs md:text-sm tracking-widest uppercase m-0">Let's work together.</p>
-                    <div id="email-toast" class="absolute left-1/2 -translate-x-1/2 bg-white text-neutral-900 px-5 py-2.5 md:px-6 md:py-3 rounded-full font-medium text-xs md:text-sm transition-all duration-500 z-[10] flex items-center gap-2 md:gap-3 shadow-[0_10px_30px_rgba(0,0,0,0.15)] opacity-0 translate-y-4 scale-95 pointer-events-none">
-                        <div class="w-4 h-4 md:w-5 md:h-5 rounded-full bg-[#C0FF04] flex items-center justify-center text-neutral-900 font-bold text-[10px] md:text-xs">✓</div> 
+                    <div id="email-toast" class="absolute left-1/2 -translate-x-1/2 bg-white text-neutral-900 px-5 py-2.5 md:px-6 md:py-3 rounded-full font-normal text-xs md:text-sm transition-all duration-500 z-[10] flex items-center gap-2 md:gap-3 shadow-[0_10px_30px_rgba(0,0,0,0.15)] opacity-0 translate-y-4 scale-95 pointer-events-none">
+                        <!-- 优化：将原本的字符替换为精准的矢量 SVG 图标，保持纯粹的几何感与线条克制 -->
+                        <div class="w-4 h-4 md:w-5 md:h-5 rounded-full bg-[#C0FF04] flex items-center justify-center text-neutral-900">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="w-2.5 h-2.5 md:w-3 md:h-3"><path d="M20 6 9 17l-5-5"/></svg>
+                        </div> 
                         Email copied successfully!
                     </div>
                 </div>
@@ -311,10 +314,10 @@
             </div>
         </div>
         
-        <div class="fade-in w-full" style="transition-delay: 300ms;">
+        <div class="w-full">
             <div class="max-w-screen-2xl mx-auto mt-16 md:mt-20 pt-6 md:pt-8 border-t border-white/10 text-xs md:text-sm text-neutral-400 flex flex-col md:flex-row justify-between gap-4">
-                <p>© 2026 Chen Chen Design, All rights reserved.</p>
-                <p>Have a nice day! ☀️</p>
+                <p class="font-normal">© 2026 Chen Chen Design, All rights reserved.</p>
+                <p class="font-normal">Have a nice day! ☀️</p>
             </div>
         </div>
     </footer>
@@ -336,7 +339,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 md:w-10 md:h-10"><path d="m9 18 6-6-6-6"/></svg>
         </button>
 
-        <div id="gl-counter" class="absolute bottom-5 md:bottom-6 left-1/2 -translate-x-1/2 text-white/40 font-mono text-xs md:text-sm tracking-widest pointer-events-none"></div>
+        <div id="gl-counter" class="absolute bottom-5 md:bottom-6 left-1/2 -translate-x-1/2 text-white/40 font-mono text-xs md:text-sm font-normal tracking-widest pointer-events-none"></div>
     </div>
 
     <!-- Project Lightbox -->
@@ -448,16 +451,19 @@
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
             
-            // Navbar 样式更新
+            // Navbar 样式更新 (滑动后去除黑框，恢复透明毛玻璃)
             if (scrollY > 50) {
                 navbar.classList.replace('py-8', 'py-4');
                 navbar.classList.replace('bg-transparent', 'bg-white/70');
+                navbar.classList.remove('border-b-[1.5px]', 'border-[#000]');
                 navbar.classList.add('backdrop-blur-md', 'border-b', 'border-neutral-200/50', 'shadow-[0_4px_30px_rgba(0,0,0,0.03)]');
                 navLogo.innerText = 'CHENCHEN.DESIGN';
             } else {
+                // 恢复默认首屏状态 (重新加上纯黑加粗边框)
                 navbar.classList.replace('py-4', 'py-8');
                 navbar.classList.replace('bg-white/70', 'bg-transparent');
                 navbar.classList.remove('backdrop-blur-md', 'border-b', 'border-neutral-200/50', 'shadow-[0_4px_30px_rgba(0,0,0,0.03)]');
+                navbar.classList.add('border-b-[1.5px]', 'border-[#000]');
                 navLogo.innerText = 'Portfolio.';
             }
 
@@ -473,10 +479,10 @@
             navBtns.forEach(btn => {
                 if (btn.getAttribute('data-section') === currentSection) {
                     btn.classList.replace('opacity-50', 'opacity-100');
-                    btn.classList.replace('font-thin', 'font-normal');
+                    btn.classList.replace('font-light', 'font-normal');
                 } else {
                     btn.classList.replace('opacity-100', 'opacity-50');
-                    btn.classList.replace('font-normal', 'font-thin');
+                    btn.classList.replace('font-normal', 'font-light');
                 }
             });
         });
