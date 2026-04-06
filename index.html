@@ -103,7 +103,8 @@
                 </div>
                 
                 <div class="fade-in" style="transition-delay: 300ms;">
-                    <div class="mt-10 md:mt-12 text-[13px] md:text-[15px] text-neutral-600 leading-[1.8] md:leading-[1.9] tracking-wide font-light">
+                    <!-- 修复2：微调行高从 1.9 缩减至 1.7，在保留排版呼吸感的同时，大幅削减 Chrome 浏览器选中文字时产生的高亮 "Padding" -->
+                    <div class="mt-10 md:mt-12 text-[13px] md:text-[15px] text-neutral-600 leading-[1.6] md:leading-[1.7] tracking-wide font-light">
                         <p class="mb-5 md:mb-6">
                             A <span class="bg-[#C0FF04] text-neutral-900 font-normal px-1">UX designer</span> with 12 years of experience. I studied at the <span class="bg-[#C0FF04] text-neutral-900 font-normal px-1">Picture Book</span> Studio, Department of Art & Design, <span class="bg-[#C0FF04] text-neutral-900 font-normal px-1">Central Academy of Fine Arts</span>, and have worked at LightInTheBox and Mafengwo. I’m currently a <span class="bg-[#C0FF04] text-neutral-900 font-normal px-1">design manager at Meituan</span>, with five years of experience leading teams.
                         </p>
@@ -239,7 +240,8 @@
                         <div class="w-full md:w-1/2 flex justify-center md:justify-start">
                             <div class="max-w-sm lg:max-w-md w-full">
                                 <h3 class="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-neutral-900 mb-5 lg:mb-6">My Wedding</h3>
-                                <div class="text-neutral-600 font-light leading-[1.8] text-[14px] md:text-[15px]">
+                                <!-- 修复2同步：将描述文本行高同步缩减至 1.7，保持全局高亮的一致性 -->
+                                <div class="text-neutral-600 font-light leading-[1.6] md:leading-[1.7] text-[14px] md:text-[15px]">
                                     <span>An illustrated welcome sign for my wedding, featuring <strong class="font-normal text-neutral-900">sunflowers</strong> I love and our <strong class="font-normal text-neutral-900">two cats</strong>. We are depicted in our <strong class="font-normal text-neutral-900">wedding attire</strong>, capturing a gentle early summer day I still hold in memory.</span>
                                 </div>
                             </div>
@@ -251,15 +253,16 @@
                 <div class="fade-in w-full">
                     <div class="relative w-full pt-12 md:pt-16 pb-8 md:pb-10">
                         <div class="flex flex-col md:flex-row items-start md:items-center relative gap-6 md:gap-8 lg:gap-10">
-                            <div class="w-full md:w-[40%] lg:w-[35%] shrink-0 mb-8 md:mb-0 z-0">
+                            <!-- 修复3：通过 order 控制在手机端强制图上文下 (order-2)，电脑端恢复文左图右 (md:order-1) -->
+                            <div class="w-full md:w-[40%] lg:w-[35%] shrink-0 z-0 order-2 md:order-1 mt-6 md:mt-0">
                                 <div class="max-w-xs lg:max-w-sm">
                                     <h3 class="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-neutral-900 mb-5 lg:mb-6">An Autumn Journey</h3>
-                                    <div class="text-neutral-600 font-light leading-[1.8] text-[14px] md:text-[15px]">
+                                    <div class="text-neutral-600 font-light leading-[1.6] md:leading-[1.7] text-[14px] md:text-[15px]">
                                         <span>A Mid-Autumn <strong class="font-normal text-neutral-900">road trip</strong> with friends to the <strong class="font-normal text-neutral-900">Red Beach</strong>, where we visited the <strong class="font-normal text-neutral-900">solitary seaside library</strong> and witnessed the moon rising over the ocean.</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="w-full min-w-0 relative z-10">
+                            <div class="w-full min-w-0 relative z-10 order-1 md:order-2">
                                 <div id="autumn-journey-container" class="flex gap-4 md:gap-5 lg:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-4 items-center overscroll-x-none">
                                     <!-- Populated by JS -->
                                 </div>
@@ -301,8 +304,8 @@
             <div class="fade-in" style="transition-delay: 0ms;">
                 <div class="relative flex items-center w-full mb-4 md:mb-6">
                     <p class="text-[#C0FF04] text-xs md:text-sm tracking-widest uppercase m-0">Let's work together.</p>
-                    <div id="email-toast" class="absolute left-1/2 -translate-x-1/2 bg-white text-neutral-900 px-5 py-2.5 md:px-6 md:py-3 rounded-full font-normal text-xs md:text-sm transition-all duration-500 z-[10] flex items-center gap-2 md:gap-3 shadow-[0_10px_30px_rgba(0,0,0,0.15)] opacity-0 translate-y-4 scale-95 pointer-events-none">
-                        <!-- 优化：将原本的字符替换为精准的矢量 SVG 图标，保持纯粹的几何感与线条克制 -->
+                    <!-- 修复1：引入 fixed md:absolute 混合定位。手机端依然居中，电脑端则转为绝对定位完美对齐 Let's work together. -->
+                    <div id="email-toast" class="fixed md:absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-neutral-900 px-6 py-3 md:px-8 md:py-4 rounded-full font-normal text-[13px] md:text-sm transition-all duration-500 z-[9999] flex items-center gap-2.5 md:gap-3 shadow-[0_10px_40px_rgba(0,0,0,0.2)] opacity-0 scale-90 pointer-events-none whitespace-nowrap">
                         <div class="w-4 h-4 md:w-5 md:h-5 rounded-full bg-[#C0FF04] flex items-center justify-center text-neutral-900">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="w-2.5 h-2.5 md:w-3 md:h-3"><path d="M20 6 9 17l-5-5"/></svg>
                         </div> 
@@ -348,12 +351,15 @@
 
     <!-- Project Lightbox -->
     <div id="project-lightbox" class="hidden fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl transition-opacity duration-300 flex justify-center" onclick="closeProjectLightbox()">
-        <button onclick="closeProjectLightbox()" class="fixed top-4 right-4 md:top-5 md:right-5 p-2 md:p-2.5 text-white/50 hover:text-white transition-colors z-50 rounded-full hover:bg-white/10 shadow-lg">
+        <!-- 修复2：为移动端的关闭按钮增加一个深色半透明背景，防止大图白底时看不见关闭按钮 -->
+        <button onclick="closeProjectLightbox()" class="fixed top-4 right-4 md:top-5 md:right-5 p-2 md:p-2.5 text-white/50 hover:text-white transition-colors z-[110] rounded-full hover:bg-white/10 shadow-lg bg-black/40 md:bg-transparent md:shadow-none">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 md:w-8 md:h-8"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
-        <div class="w-full h-full overflow-y-auto no-scrollbar px-14 py-16 md:px-20 md:py-20">
+        <!-- 修复2：移动端强制无安全内边距 px-0 py-0 使图片完全全屏 -->
+        <div class="w-full h-full overflow-y-auto no-scrollbar px-0 py-0 md:px-20 md:py-20">
             <div class="w-full mx-auto min-h-full flex flex-col justify-start" onclick="event.stopPropagation()">
-                <img id="pl-image" src="" alt="Project Detail" class="w-full h-auto shadow-2xl rounded-md pointer-events-none transition-transform duration-500 ease-out" />
+                <!-- 修复2：移动端去除图片圆角 rounded-none 保证贴边 -->
+                <img id="pl-image" src="" alt="Project Detail" class="w-full h-auto shadow-2xl rounded-none md:rounded-md pointer-events-none transition-transform duration-500 ease-out" />
             </div>
         </div>
     </div>
@@ -522,11 +528,12 @@
             try {
                 document.execCommand('copy');
                 const toast = document.getElementById('email-toast');
-                toast.classList.remove('opacity-0', 'translate-y-4', 'scale-95', 'pointer-events-none');
-                toast.classList.add('opacity-100', 'translate-y-0', 'scale-100');
+                // 修复1逻辑更新：使用 scale 和 opacity 控制全局固定的 Toast 动画
+                toast.classList.remove('opacity-0', 'scale-90', 'pointer-events-none');
+                toast.classList.add('opacity-100', 'scale-100');
                 setTimeout(() => {
-                    toast.classList.remove('opacity-100', 'translate-y-0', 'scale-100');
-                    toast.classList.add('opacity-0', 'translate-y-4', 'scale-95', 'pointer-events-none');
+                    toast.classList.remove('opacity-100', 'scale-100');
+                    toast.classList.add('opacity-0', 'scale-90', 'pointer-events-none');
                 }, 2500);
             } catch (err) {
                 console.error('Failed to copy', err);
